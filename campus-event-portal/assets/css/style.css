@@ -1,0 +1,104 @@
+/* ============================================================
+   CampusVerse — Global Stylesheet
+   ============================================================ */
+
+:root {
+  --bg: #050810;
+  --surface: #0d1117;
+  --card: #111827;
+  --border: rgba(255, 255, 255, 0.06);
+  --accent: #6EE7B7;
+  --accent2: #818CF8;
+  --accent3: #F472B6;
+  --text: #F1F5F9;
+  --muted: #94A3B8;
+  --error: #F87171;
+  --success: #6EE7B7;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); overflow-x: hidden; }
+
+/* ── SHARED INNER NAV ── */
+.inner-nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 3rem;
+  background: rgba(5,8,16,0.85); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo-inner {
+  font-family: var(--font-display); font-weight: 800; font-size: 1.3rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+.inner-nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.inner-nav-links a {
+  color: var(--muted); text-decoration: none; font-size: 0.875rem;
+  transition: color 0.2s;
+}
+.inner-nav-links a:hover { color: var(--text); }
+.inner-nav-right { display: flex; gap: 0.75rem; align-items: center; }
+.nav-user { font-size: 0.875rem; color: var(--muted); }
+.btn-ghost-sm {
+  padding: 0.4rem 1rem; border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text); text-decoration: none; font-size: 0.8rem; transition: all 0.2s;
+}
+.btn-ghost-sm:hover { border-color: var(--accent); color: var(--accent); }
+.btn-primary-sm {
+  padding: 0.4rem 1rem; background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none; border-radius: 8px; color: #050810; font-weight: 700;
+  text-decoration: none; font-size: 0.8rem; transition: all 0.2s; display: inline-block;
+}
+.btn-primary-sm:hover { transform: translateY(-1px); }
+
+/* ── INNER FOOTER ── */
+.inner-footer {
+  border-top: 1px solid var(--border); padding: 2rem 3rem;
+  background: var(--surface);
+}
+.inner-footer-content { max-width: 1200px; margin: 0 auto; text-align: center; }
+.nav-logo {
+  font-family: var(--font-display); font-weight: 800; font-size: 1.2rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* ── FORM COMPONENTS ── */
+.form-control {
+  width: 100%; padding: 0.8rem 1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text); font-family: var(--font-body); font-size: 0.9rem;
+  transition: all 0.3s; outline: none;
+}
+.form-control:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(110,231,183,0.1); }
+
+/* ── BUTTONS ── */
+.btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: var(--radius); font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; border: none; font-family: var(--font-body); }
+.btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #050810; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(110,231,183,0.25); }
+.btn-danger { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.2); color: var(--error); }
+.btn-danger:hover { background: rgba(248,113,113,0.2); }
+
+/* ── ALERTS ── */
+.alert { padding: 0.875rem 1rem; border-radius: var(--radius); margin-bottom: 1.25rem; font-size: 0.875rem; }
+.alert-danger { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.2); color: var(--error); }
+.alert-success { background: rgba(110,231,183,0.08); border: 1px solid rgba(110,231,183,0.2); color: var(--success); }
+.alert-info { background: rgba(129,140,248,0.08); border: 1px solid rgba(129,140,248,0.2); color: var(--accent2); }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ── SELECTION ── */
+::selection { background: rgba(110,231,183,0.2); }
